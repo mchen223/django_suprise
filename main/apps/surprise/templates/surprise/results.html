@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Surprise Me!</title>
+    <meta name="Surprise Me!" content="Surprise Me! Project">
+    {% load static %}
+    <link rel='stylesheet' type='text/css' href="{% static 'surprise/css/stylesheet.css' %}">
+
+</head>
+
+<body>
+  <h1>Surprises:</h1>
+   <div>
+      <ul>
+         {% for string in request.session.strings %}
+         <li>{{  string  }}</li>
+         {% endfor %}
+      </ul>
+   </div>
+   <a href="/reset">Reset</a>
+
+</body>
+
+</html>

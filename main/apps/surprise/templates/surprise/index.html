@@ -1,0 +1,23 @@
+ <!DOCTYPE html>
+ <html lang="en">
+
+<head>
+     <meta charset="UTF-8">
+     <title>Surprise Me!</title>
+     <meta name="Surprise Me!" content="Surprise Me! Project">
+     {% load static %}
+     <link rel='stylesheet' type='text/css' href="{% static 'surprise/css/stylesheet.css' %}">
+ </head>
+
+ <body>
+   <h1>Surprise Me!</h1>
+   {{ alert }}
+   <form action="/results" method="POST">
+	   {% csrf_token %}
+	   <p>Pick a number: <input type="number" name="number"></p>
+	   <input type="submit" value="Ready!">
+   </form>
+
+ </body>
+
+ </html>
